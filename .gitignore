@@ -3,6 +3,9 @@
 # local ECC source clone (re-run: git clone --depth 1 https://github.com/affaan-m/everything-claude-code.git .ecc-everything-claude-tmp)
 .ecc-everything-claude-tmp/
 
+# superpowers git source for re-vendoring (git clone --branch v5.0.7 --depth 1 https://github.com/obra/superpowers.git .superpowers-src)
+.superpowers-src/
+
 # dependencies
 /node_modules
 /.pnp

@@ -6,6 +6,18 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ---
 
+## Superpowers (spec and plan before code)
+
+This repo vendors [Superpowers](https://github.com/obra/superpowers) skills **`brainstorming`** and **`writing-plans`** under `.cursor/skills/`. **User instructions always win** (this file, direct chat, `CLAUDE.md`).
+
+- **New features, new behavior, or non-trivial design:** follow those skills—question-driven spec → written spec in `docs/superpowers/specs/` → implementation plan in `docs/superpowers/plans/` → then implement. In Cursor, **read** the `SKILL.md` files (there is no separate `Skill` tool). Project rule: [`.cursor/rules/superpowers-workflow.mdc`](.cursor/rules/superpowers-workflow.mdc).
+- **Trivial fixes** (typos, obvious one-liners) or when the user explicitly says to **skip spec/plan:** skip the full Superpowers flow.
+- **Implementation and quality:** use **ECC** below (agents, hooks, `/tdd`, `tdd-workflow`, `code-reviewer`, Next.js rules) so you do not run two competing TDD systems—align with [`.cursor/skills/tdd-workflow/SKILL.md`](.cursor/skills/tdd-workflow/SKILL.md) for code. Optional shortcut: **`/brainstorm`** command.
+
+Details: [`docs/superpowers/NOTICE.md`](docs/superpowers/NOTICE.md).
+
+---
+
 # Everything Claude Code (ECC) — Agent Instructions
 
 This is a **production-ready AI coding plugin** providing 48 specialized agents, 183 skills, 79 commands, and automated hook workflows for software development.
