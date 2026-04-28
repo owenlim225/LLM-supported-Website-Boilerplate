@@ -10,10 +10,16 @@ export async function GET(request: NextRequest) {
   const userId = searchParams.get("userId") ?? undefined;
   const tag = searchParams.get("tag") ?? undefined;
 
+  const limitRaw = Number(searchParams.get("limit") ?? "20");
+  const offsetRaw = Number(searchParams.get("offset") ?? "0");
+  const limit = Number.isFinite(limitRaw) ? Math.max(1, Math.min(50, Math.floor(limitRaw))) : 20;
+  const offset = Number.isFinite(offsetRaw) ? Math.max(0, Math.floor(offsetRaw)) : 0;
+
   const contentItems = db.getPublicContent({ provider, mediaType, userId, tag });
+  const paginated = contentItems.slice(offset, offset + limit);
   return ok({
-    items: contentItems,
-    filters: { provider, mediaType, userId, tag },
+    items: paginated,
+    filters: { provider, mediaType, userId, tag, limit, offset },
     total: contentItems.length,
   });
 }

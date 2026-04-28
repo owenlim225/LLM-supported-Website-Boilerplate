@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 
 import { requireUser } from "@/lib/backend/auth";
-import { getErrorStatus } from "@/lib/backend/errors";
+import { getClientErrorMessage, getErrorStatus } from "@/lib/backend/errors";
 import { fail, ok } from "@/lib/backend/http";
 import { refreshLinkedAccount } from "@/lib/backend/services";
 
@@ -15,8 +15,7 @@ export async function POST(
     const items = await refreshLinkedAccount({ linkId: id, user });
     return ok({ itemsCreatedOrUpdated: items.length, items });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unexpected error";
-    return fail(getErrorStatus(error, 400), message);
+    return fail(getErrorStatus(error, 500), getClientErrorMessage(error));
   }
 }
 

@@ -15,3 +15,10 @@ export function getErrorStatus(error: unknown, fallback = 400): number {
   return fallback;
 }
 
+export function getClientErrorMessage(error: unknown): string {
+  if (error instanceof AppError) {
+    return error.message;
+  }
+  return "Internal server error";
+}
+

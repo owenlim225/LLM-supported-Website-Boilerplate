@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 
 import { requireAdmin, requireUser } from "@/lib/backend/auth";
-import { getErrorStatus } from "@/lib/backend/errors";
+import { getClientErrorMessage, getErrorStatus } from "@/lib/backend/errors";
 import { fail, ok } from "@/lib/backend/http";
 import { moderateContentItem } from "@/lib/backend/services";
 
@@ -23,8 +23,7 @@ export async function POST(
     const updated = moderateContentItem({ contentItemId: id, status: body.status });
     return ok(updated);
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unexpected error";
-    return fail(getErrorStatus(error, 400), message);
+    return fail(getErrorStatus(error, 500), getClientErrorMessage(error));
   }
 }
 

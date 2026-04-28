@@ -18,7 +18,10 @@ export function requireUser(request: NextRequest): User {
   }
   const [userId, providedSignature] = token.split(".");
   const secret = process.env.GDC_API_AUTH_SECRET;
-  if (!userId || !providedSignature || !secret) {
+  if (!secret) {
+    throw new AppError("Server auth is not configured", 500);
+  }
+  if (!userId || !providedSignature) {
     throw new AppError("Invalid auth token", 401);
   }
   const expectedSignature = computeSignature(userId, secret);

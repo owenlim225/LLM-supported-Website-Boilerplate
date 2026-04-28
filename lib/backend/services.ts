@@ -59,7 +59,8 @@ export async function refreshLinkedAccount(params: { linkId: string; user: User 
   let raw;
   try {
     raw = await adapter.fetchItems(link.externalUsernameOrSlug);
-  } catch {
+  } catch (error) {
+    console.error("Provider fetch failed", { linkId: link.id, error });
     db.createSyncLog({
       id: makeId("sync"),
       linkedAccountId: link.id,
