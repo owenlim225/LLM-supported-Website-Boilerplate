@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 **Third-party:** Design-time agent skills **brainstorming** and **writing-plans** are from [Superpowers](https://github.com/obra/superpowers) (MIT, vendored at v5.0.7). See [`docs/superpowers/NOTICE.md`](docs/superpowers/NOTICE.md).
 
 ## Getting Started
-test.
+
 First, run the development server:
 
 ```bash
