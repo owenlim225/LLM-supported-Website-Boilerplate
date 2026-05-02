@@ -1,38 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LLM Supported Website Boilerplate
 
-**Third-party:** Design-time agent skills **brainstorming** and **writing-plans** are from [Superpowers](https://github.com/obra/superpowers) (MIT, vendored at v5.0.7). See [`docs/superpowers/NOTICE.md`](docs/superpowers/NOTICE.md).
+A **minimal [Next.js](https://nextjs.org) 16** (App Router) starter: one home page, a JSON health route, and optional API rate limiting in `middleware.ts`. The repo also includes **Cursor + Everything Claude Code (ECC)** workflow assets under `.cursor/` (rules, skills, hooks) so you can grow features with a consistent process.
 
-## Getting Started
+**Third-party:** Design-time agent skills **brainstorming** and **writing-plans** come from [Superpowers](https://github.com/obra/superpowers) (vendored). See [`docs/superpowers/NOTICE.md`](docs/superpowers/NOTICE.md).
 
-First, run the development server:
+## Quick start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The health endpoint is [http://localhost:3000/api/health](http://localhost:3000/api/health).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What to do next
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Edit the home page in `app/page.tsx` and site metadata in `app/layout.tsx`.
+- Add pages and API routes under `app/`.
+- Reuse the JSON response helpers in `lib/http.ts` (`ok` / `fail`) for a consistent API envelope.
+- Read `AGENTS.md` for agent orchestration, testing expectations, and Superpowers spec/plan flow.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+| Script    | Command        |
+| --------- | -------------- |
+| Dev       | `npm run dev`  |
+| Build     | `npm run build`|
+| Start     | `npm run start`|
+| Lint      | `npm run lint` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy anywhere that supports Next.js (for example [Vercel](https://vercel.com)). See the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).

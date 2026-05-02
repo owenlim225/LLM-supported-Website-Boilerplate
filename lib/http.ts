@@ -7,4 +7,3 @@ export function ok<T>(data: T, init?: ResponseInit) {
 export function fail(status: number, message: string) {
   return NextResponse.json({ success: false, data: null, error: message }, { status });
 }
-

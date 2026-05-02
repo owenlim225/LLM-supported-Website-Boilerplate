@@ -6,11 +6,11 @@ const MAX_REQUESTS_PER_WINDOW = 30;
 type Entry = { count: number; windowStart: number };
 
 const globalState = globalThis as typeof globalThis & {
-  __gdcRateLimit?: Map<string, Entry>;
+  __apiRateLimit?: Map<string, Entry>;
 };
 
-const rateMap = globalState.__gdcRateLimit ?? new Map<string, Entry>();
-globalState.__gdcRateLimit = rateMap;
+const rateMap = globalState.__apiRateLimit ?? new Map<string, Entry>();
+globalState.__apiRateLimit = rateMap;
 
 function makeKey(request: NextRequest): string {
   const ip = request.headers.get("x-forwarded-for") ?? "unknown";

@@ -1,38 +1,8 @@
-# Documentation Index
+# Documentation
 
-## Purpose
-Central navigation for all project documentation domains and audience-specific guides.
+This folder is intentionally light in the boilerplate. Add product and technical docs as your project grows.
 
-## Domains
-- [Product](./product/)
-- [Architecture](./architecture/)
-- [API](./api/)
-- [Security](./security/)
-- [Operations](./operations/)
-- [Testing](./testing/)
-- [Contributors](./contributors/)
-- [Governance](./governance/)
-- [Templates](./templates/)
-- [Decision Log](./decision-log/)
-- [Glossary](./glossary.md)
+- **Superpowers notice:** third-party skill attribution lives in [`superpowers/NOTICE.md`](./superpowers/NOTICE.md).
+- **Optional kickoff prompt:** [`prompts/llm-plan-mode-project-kickoff.md`](./prompts/llm-plan-mode-project-kickoff.md) for plan-mode discovery before implementation.
 
-## Audience Routing
-- Internal builders: start with `architecture`, `api`, `security`, `operations`, `testing`.
-- Contributors: start with `contributors`, then `product`, `testing`.
-- External stakeholders: start with `product/stakeholder-summary.md` and `product/roadmap.md`.
-
-## Source Specs
-- `docs/superpowers/specs/2026-04-28-gdc-aggregator-mvp-design.md`
-- `docs/superpowers/specs/2026-04-29-gdc-documentation-system-design.md`
-
-## Documentation System Acceptance
-- [x] All required domain docs exist
-- [ ] Every major MVP requirement is mapped
-- [ ] Every doc includes quality metadata
-- [ ] Wave 1 is implementation-ready
-- [ ] Contributor onboarding can be completed from docs
-- [ ] Stakeholder summary is externally readable
-
-## Change Log
-- 2026-04-29: Initial documentation index created.
-
+For feature work, this repo’s workflow expects specs and plans under `docs/superpowers/` when you use the Superpowers skills (see `AGENTS.md` and `.cursor/rules/superpowers-workflow.mdc`).

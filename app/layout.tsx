@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "UPHSL Game Developers Club",
+  title: "LLM Supported Website Boilerplate",
   description:
-    "Official public site of the UPHSL Game Developers Club featuring projects, members, and community updates.",
+    "A minimal Next.js starter intended as a clean base for new sites and AI-assisted workflows.",
 };
 
 export default function RootLayout({

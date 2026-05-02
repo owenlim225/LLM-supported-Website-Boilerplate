@@ -1,10 +1,9 @@
-import { ok } from "@/lib/backend/http";
+import { ok } from "@/lib/http";
 
 export async function GET() {
   return ok({
-    service: "gdc-aggregator-backend",
+    service: "app",
     status: "ok",
     timestamp: new Date().toISOString(),
   });
 }
-

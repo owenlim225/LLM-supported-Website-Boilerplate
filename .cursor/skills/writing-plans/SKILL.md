@@ -151,7 +151,7 @@ After saving the plan, offer execution choice:
 - **REQUIRED SUB-SKILL:** Use superpowers:executing-plans
 - Batch execution with checkpoints for review
 
-## This project (UPHSL + Cursor + ECC)
+## This project (Cursor + ECC)
 
 A third default is available because this workspace uses **Everything Claude Code** and Cursor has no `Skill` tool for `superpowers:*` names:
 
