@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Tooling and generated types — lint app/, lib/, middleware.ts only
+    ".cursor/**",
+    "docs/**",
+    "types/**",
+    "mcps/**",
   ]),
 ]);
 
